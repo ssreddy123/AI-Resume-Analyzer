@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Interview Questions</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🎤 AI Interview Questions</h1>
+
+<div class="ai-box">
+
+{{ questions|safe }}
+
+</div>
+
+<br>
+
+<a href="/">
+    <button>🏠 Home</button>
+</a>
+
+</div>
+
+</body>
+
+</html>
+<footer style="margin-top:40px;text-align:center;color:gray;font-size:14px;">
+    <hr><br>
+    AI Resume Analyzer © 2026 | Developed by Vakamalla Siva Shankar Reddy
+</footer>

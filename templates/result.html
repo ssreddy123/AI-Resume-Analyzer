@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Resume Analysis</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🤖 AI Resume Analyzer</h1>
+
+<h2>✅ Resume Uploaded Successfully!</h2>
+
+<div class="dashboard">
+
+    <div class="card">
+        <h3>📊 ATS Score</h3>
+        {{ score_bar|safe }}
+    </div>
+
+    <div class="card">
+        <h3>💪 Resume Strength</h3>
+        <p>{{ strength }}</p>
+    </div>
+
+    <div class="card">
+        <h3>💼 Recommended Job Role</h3>
+        <p>{{ job_role }}</p>
+    </div>
+
+</div>
+
+
+
+<br>
+
+<div class="section">
+<h3>Detected Skills</h3>
+{{ skills_html|safe }}
+</div>
+
+
+<div class="section">
+
+    <h2>📊 Resume Statistics</h2>
+
+    <div class="dashboard">
+
+        <div class="card">
+            <h3>📝 Total Words</h3>
+            <p>{{ word_count }}</p>
+        </div>
+
+        <div class="card">
+            <h3>🔠 Characters</h3>
+            <p>{{ char_count }}</p>
+        </div>
+
+        <div class="card">
+            <h3>✅ Skills Found</h3>
+            <p>{{ skill_count }}</p>
+        </div>
+
+        <div class="card">
+            <h3>❌ Missing Skills</h3>
+            <p>{{ missing_count }}</p>
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<div class="section">
+<h3>Detected Skills</h3>
+{{ skills_html|safe }}
+</div>
+
+<div class="section">
+<h3>Missing Skills</h3>
+{{ missing_html|safe }}
+</div>
+
+<div class="section">
+<h3>Suggestions</h3>
+{{ suggestion_html|safe }}
+</div>
+<div class="section">
+    <h2>🎯 Job Description Match</h2>
+
+    <h3>Resume Match: {{ jd_match }}%</h3>
+
+    <div class="progress">
+        <div class="progress-fill"
+             style="width:{{ jd_match }}%; background:#007bff;">
+            {{ jd_match }}%
+        </div>
+    </div>
+
+    <br>
+
+    <h3>✅ Matching Skills</h3>
+
+    {% if matched_skills %}
+        {% for skill in matched_skills %}
+            <p>✔ {{ skill.title() }}</p>
+        {% endfor %}
+    {% else %}
+        <p>No matching skills found.</p>
+    {% endif %}
+
+</div>
+<div class="section">
+    <h2>🤖 AI Career Assistant</h2>
+
+    <div class="ai-box">
+        {{ ai_analysis|safe }}
+    </div>
+</div>
+
+<div class="section">
+<h3>Resume Content</h3>
+</div>
+
+<br><br>
+
+<a href="/download">
+    <button>📄 Download Report</button>
+</a>
+<br><br>
+
+<a href="/interview">
+    <button>🎤 Generate Interview Questions</button>
+</a>
+<br><br>
+
+<a href="/cover-letter">
+    <button>📝 Generate Cover Letter</button>
+</a>
+
+<pre>{{ text }}</pre>
+
+</div>
+
+</body>
+</html>
+<footer style="margin-top:40px;text-align:center;color:gray;font-size:14px;">
+    <hr><br>
+    AI Resume Analyzer © 2026 | Developed by Vakamalla Siva Shankar Reddy
+</footer>

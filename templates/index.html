@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Resume Analyzer</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>AI Resume Analyzer 🤖</h1>
+
+        <p>Your Smart Career Assistant</p>
+
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+
+            <input type="file" name="resume">
+
+            <br><br>
+
+            <label><b>🎯 Paste Job Description (Optional)</b></label>
+
+            <br><br>
+
+            <textarea
+                name="job_description"
+                rows="8"
+                placeholder="Example:
+Looking for a Python Developer with Flask, SQL, Git, Docker and AWS experience..."
+                style="width:100%; padding:12px; border-radius:10px; resize:vertical;"></textarea>
+
+            <br><br>
+
+            <button type="submit">Upload Resume</button>
+
+        </form>
+
+    </div>
+
+</body>
+
+</html>
+<footer style="margin-top:40px;text-align:center;color:gray;font-size:14px;">
+    <hr><br>
+    AI Resume Analyzer © 2026 | Developed by Vakamalla Siva Shankar Reddy
+</footer>
